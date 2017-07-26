@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
 
+import Button from 'carbon-react/lib/components/button';
+
 // Import Components
 import PostListItem from './PostListItem/PostListItem';
 
 function PostList(props) {
   return (
     <div className="listView">
+      <Button>FFIODSHJOFIGSHDOIFGSHDOIGSHFOIGSHFOIG</Button>
       {
         props.posts.map(post => (
           <PostListItem
