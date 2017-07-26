@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
+import Button from 'carbon-react/lib/components/button';
 
 // Import Style
 import styles from './PostListItem.css';
@@ -10,6 +11,7 @@ function PostListItem(props) {
   return (
     <div className={styles2['foo']}>
       <h3 className={styles2['foo']}>
+        <Button as='primary'>This is a Carbon button</Button>
         <Link to={`/posts/${props.post.slug}-${props.post.cuid}`} >
           {props.post.title}
         </Link>
