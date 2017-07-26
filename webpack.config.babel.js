@@ -13,7 +13,7 @@ module.exports = {
     libraryTarget: 'commonjs2',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.scss', '.jsx'],
     modules: [
       'client',
       'node_modules',
@@ -29,6 +29,10 @@ module.exports = {
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$/i,
         loader: 'url-loader?limit=10000',
+      },
+      {
+        test: /\.scss$/,
+        loaders: 'css-loader/locals?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1!sass-loader',
       },
     ],
   },

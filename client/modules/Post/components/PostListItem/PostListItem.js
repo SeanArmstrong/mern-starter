@@ -4,11 +4,12 @@ import { FormattedMessage } from 'react-intl';
 
 // Import Style
 import styles from './PostListItem.css';
+import styles2 from './PostListItem.scss';
 
 function PostListItem(props) {
   return (
-    <div className={styles['single-post']}>
-      <h3 className={styles['post-title']}>
+    <div className={styles2['foo']}>
+      <h3 className={styles2['foo']}>
         <Link to={`/posts/${props.post.slug}-${props.post.cuid}`} >
           {props.post.title}
         </Link>

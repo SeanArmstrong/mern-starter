@@ -27,7 +27,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.scss', '.jsx'],
     modules: [
       'client',
       'node_modules',
@@ -54,7 +54,10 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
-      },
+      }, {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!sass-loader?sourceMap',
+      }
     ],
   },
 
