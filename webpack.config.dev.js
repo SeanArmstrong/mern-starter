@@ -45,14 +45,10 @@ module.exports = {
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
       }, {
-        // test: /\.scss$/,
-        // exclude: /node_modules/,
-        // loader: 'style-loader!css-loader!sass-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
-      // }, {
-      //   test: /\.scss$/,
-      //   exclude: /node_modules/,
-      //   loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader!sass-loader?sourceMap',
-      // }, {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader!sass-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
+      }, {
         test: /\.scss$/,
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader', 'sass-loader'],
