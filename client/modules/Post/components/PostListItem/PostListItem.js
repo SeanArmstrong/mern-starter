@@ -1,14 +1,18 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
+import Button from 'carbon-react/lib/components/button/button.js';
+import 'carbon-react/lib/components/button/button.scss';
 
 // Import Style
 import styles from './PostListItem.css';
+import styles2 from './PostListItem.scss';
 
 function PostListItem(props) {
   return (
-    <div className={styles['single-post']}>
-      <h3 className={styles['post-title']}>
+    <div className={styles2['foo']}>
+      <h3 className={styles2['foo']}>
+        <Button as='primary'>This is a Carbon button</Button>
         <Link to={`/posts/${props.post.slug}-${props.post.cuid}`} >
           {props.post.title}
         </Link>

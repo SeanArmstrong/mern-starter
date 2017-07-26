@@ -27,7 +27,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.scss', '.jsx'],
     modules: [
       'client',
       'node_modules',
@@ -54,6 +54,14 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?localIdentName=[hash:base64]&modules&importLoaders=1!sass-loader',
+        }),
       },
     ],
   },

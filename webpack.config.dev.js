@@ -27,7 +27,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.scss', '.jsx'],
     modules: [
       'client',
       'node_modules',
@@ -54,7 +54,15 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
-      },
+      }, {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!sass-loader?sourceMap',
+      }, {
+        test: /\.scss$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      }
     ],
   },
 
@@ -69,6 +77,7 @@ module.exports = {
       'process.env': {
         CLIENT: JSON.stringify(true),
         'NODE_ENV': JSON.stringify('development'),
+        'BROWSER': JSON.stringify(true)
       }
     }),
   ],
