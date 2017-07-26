@@ -32,7 +32,13 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         loaders: 'css-loader/locals?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1!sass-loader',
+      },
+      {
+        test: /\.scss$/,
+        include: /node_modules/,
+        loaders: 'css-loader/locals?importLoaders=1!sass-loader',
       }
     ],
   },

@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
-import Button from 'carbon-react/lib/components/button';
+import Button from 'carbon-react/lib/components/button/button.js';
+import 'carbon-react/lib/components/button/button.scss';
 
 // Import Style
 import styles from './PostListItem.css';
